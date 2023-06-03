@@ -11,9 +11,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: async ({ req }) => {
-    return { user: authMiddleware(req).user };
-  },
+  context: authMiddleware,
 });
 
 app.use(express.urlencoded({ extended: false }));
