@@ -12,7 +12,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: async ({ req }) => {
-    return { user: authMiddleware(req) };
+    return { user: authMiddleware(req).user };
   },
 });
 
