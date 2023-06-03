@@ -15,7 +15,7 @@ const SavedBooks = () => {
 
   const user = data?.user || data?.user || {};
 
-  const handleDeleteBook = async (bookId) => {
+  const handleremoveBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -72,7 +72,7 @@ const SavedBooks = () => {
                     <Card.Text>{book.description}</Card.Text>
                     <Button
                       className="btn-block btn-danger"
-                      onClick={() => handleDeleteBook(book.bookId)}
+                      onClick={() => handleremoveBook(book.bookId)}
                     >
                       Delete this Book!
                     </Button>
