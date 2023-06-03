@@ -12,7 +12,6 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: async ({ req }) => {
-    // add the `authMiddleware` to your context
     return { user: authMiddleware(req) };
   },
 });
