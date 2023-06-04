@@ -12,7 +12,7 @@ const SignupForm = () => {
     password: "",
   });
   // set state for form validation
-  const [validated, setValidated] = useState(false);
+  const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
@@ -30,7 +30,6 @@ const SignupForm = () => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      setValidated(true);
       return;
     }
 
